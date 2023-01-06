@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:to_do_app/constants/colors.dart';
 
@@ -10,29 +9,28 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: tdBGColor,
-        title:Row(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Icon(
               Icons.menu,
-              color:tdBlack,
-              size:30,
-              ),
+              color: tdBlack,
+              size: 30,
+            ),
             Container(
-              height:40,
-              width:40,
-              child:ClipRRect(
-                child:Image.asset('images/'),
+              height: 40,
+              width: 40,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset('images/portrait.png'),
               ),
             ),
           ],
         ),
       ),
       body: Container(
-        child:Text(
-          "This is the home screen."
-        ),
+        child: Text("This is the home screen."),
       ),
-
     );
   }
 }
