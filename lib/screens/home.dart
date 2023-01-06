@@ -10,10 +10,30 @@ class Home extends StatelessWidget {
       backgroundColor: tdBGColor,
       appBar: _buildAppBar(),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 15,
+        ),
         child: Column(
           children: [
             searchBox(),
+            Expanded(
+              child: ListView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 50,
+                      bottom: 20,
+                    ),
+                    child: Text(
+                      "All ToDos",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -60,7 +80,7 @@ class Home extends StatelessWidget {
           prefixIcon: Icon(
             Icons.search,
             color: tdBlack,
-            size: 20,
+            size: 25,
           ),
           prefixIconConstraints: BoxConstraints(
             maxHeight: 20,
@@ -68,7 +88,7 @@ class Home extends StatelessWidget {
           ),
           border: InputBorder.none,
           hintText: 'Search',
-          hintStyle: TextStyle(color: tdGrey),
+          hintStyle: TextStyle(color: tdGrey, fontSize: 18),
         ),
       ),
     );
