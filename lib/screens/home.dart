@@ -20,6 +20,7 @@ class Home extends StatelessWidget {
     );
   }
 
+//APPBAR METHOD
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor: tdBGColor,
@@ -45,6 +46,7 @@ class Home extends StatelessWidget {
     );
   }
 
+//SEARCHBOX WIDGET
   Widget searchBox() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
