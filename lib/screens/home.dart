@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/constants/colors.dart';
+import 'package:to_do_app/model/todo.dart';
+import 'package:to_do_app/widgets/todo_item.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final todosList = ToDo.todoList();
 
   @override
   Widget build(BuildContext context) {
@@ -18,21 +27,22 @@ class Home extends StatelessWidget {
           children: [
             searchBox(),
             Expanded(
-              child: ListView(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      top: 50,
-                      bottom: 20,
-                    ),
-                    child: Text(
-                      "All ToDos",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
-                    ),
+              child: ListView(children: [
+                Container(
+                  margin: EdgeInsets.only(
+                    top: 50,
+                    bottom: 20,
                   ),
-                ],
-              ),
+                  child: Text(
+                    "All ToDos",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                for (ToDo todoo in todosList)
+                  ToDoItem(
+                    todo: todoo,
+                  ),
+              ]),
             ),
           ],
         ),
